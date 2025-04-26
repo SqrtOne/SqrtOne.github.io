@@ -1,2 +1,2 @@
 # SqrtOne.github.io
-SqrtOne的个人网站（静态）
+Website of SqrtOne on GitHub
