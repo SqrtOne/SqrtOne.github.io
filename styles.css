@@ -177,7 +177,7 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: white;
+    background: linear-gradient(#8ec7fc, #dec4ff);
     height: 100vh;
     border-radius: 15px;
 }
@@ -195,7 +195,7 @@ footer {
 .chevron {
     width: 24px;
     height: 24px;
-    border: 2px solid #b7c6ff;
+    border: 2px solid white;
     border-top: none;
     border-right: none;
     transform: rotate(-45deg);
