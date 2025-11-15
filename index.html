@@ -33,6 +33,11 @@
                 width: 0;
                 height: 0;
             }
+
+            .cover {
+                width: 90vw;
+                height: auto;
+            }
         }
 
         table { border-collapse: collapse; width: 100%; }
@@ -42,14 +47,15 @@
 </head>
 <body>
     <div class="block">
-        <img src="cover.jpg" alt="cover" height="400" style="border-radius: 15px"/>
+        <div class="container">
+            <img src="cover.jpg" alt="cover" height="480" style="border-radius: 15px" class="card cover" />
+        </div>
         <div class="scroll-indicator">
             <a href="#info">
                 <div class="chevron"></div>
             </a>
         </div>
     </div>
-
     <div class="container" id="info">
         <main>
             <div class="card-container">
@@ -95,9 +101,16 @@
                             <th>广东</th>
                             <th>初二</th>
                         </tr>
+                        <tr>
+                            <th><strong><em><a href="https://oier.baoshuo.dev/contest/132" target="_blank">CSP2025 提高</a></em> &nbsp;&nbsp;一等奖</strong></th>
+                            <th>40 <span class="note">/ 400</span></th>
+                            <th>12962 <span class="note">/ 30497</span></th>
+                            <th>广东</th>
+                            <th>初三</th>
+                        </tr>
                     </table>
                     <br>
-                    <p class="note">貌似没有了...只是蒟蒻OIer...（悲）</p>
+                    <p class="note">貌似没有了...只是蒟蒻OIer...（悲）&nbsp;&nbsp;&nbsp;(我的<a href="https://www.luogu.com.cn/user/1353007" target="_blank">洛谷</a>)</p>
                 </section>
             </div>
         </main>
