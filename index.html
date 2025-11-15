@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SqrtOne</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        del { color: #777; }
+
+        .note { font-size: 1rem; color: #777; }
+
+        .avatar {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .avatar {
+                width: 0;
+                height: 0;
+            }
+        }
+
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #000; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <img src="cover.jpg" alt="cover" height="400" style="border-radius: 15px"/>
+        <div class="scroll-indicator">
+            <a href="#info">
+                <div class="chevron"></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="container" id="info">
+        <main>
+            <div class="card-container">
+                <section class="card" style="display: flex">
+                    <div style="flex: 1">
+                        <h2><em>About Me</em></h2>
+                        <p><strong>ID</strong>: SqrtOne</p>
+                        <p><strong>性别</strong>: 男生 <span class="note">(想成为温柔的男孩纸)</span></p>
+                        <p><strong>MBTI</strong>: infp</p>
+                        <p><strong>生日</strong>: 2010-10-20 <span class="note">(天秤座)</span></p>
+                        <p><strong>年龄</strong>: <span class="note">[请计算]</span></p>
+                        <p><strong>身份</strong>: 学生, OIer <span class="note">(信息学竞赛选手)</span></p>
+                        <p><strong>粉籍</strong>: 生米 <span class="note">(周深粉丝)</span> <del>线下没见到过同担ww</del> &nbsp;&nbsp;&nbsp;
+                            <strong>谁是周深？</strong>
+                            <a href="https://space.bilibili.com/3404595" target="_blank">bilibili</a> |
+                            <a href="https://weibo.com/u/1736988591" target="_blank">微博</a> |
+                            <a href="https://www.douyin.com/user/MS4wLjABAAAAF8_kExFG7JF-O3gxIw3k-9ZZym2gj_X3c88KDs8-5A0" target="_blank">抖音</a> |
+                            <a href="https://baike.baidu.com/item/%E5%91%A8%E6%B7%B1/15089196" target="_blank">百度百科</a>
+                        </p>
+                        <p><strong>最喜欢的歌</strong>: <a href="https://www.bilibili.com/video/BV1SK4y1477d/?p=7" target="_blank">周深 - 起风了</a></p>
+                        <p><strong>追番</strong>: <a href="https://bgm.tv/user/sqrtone" target="_blank">[点击查看]</a> &nbsp;&nbsp;&nbsp;
+                            <strong>最喜欢</strong>: 《秒速五厘米》
+                        </p>
+                        <p><strong>游戏</strong>: Minecraft</p>
+                    </div>
+                    <img src="avatar.jpg" class="avatar" alt="avatar">
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div class="container" id="prize" style="background-color: #f0f0f0">
+        <main>
+            <div class="card-container">
+                <section class="card">
+                    <h2>获奖信息</h2>
+                    <table>
+                        <tr><th>奖项</th><th>分数</th><th>排名</th><th>省份</th><th>年级</th></tr>
+                        <tr>
+                            <th><strong><em><a href="https://oier.baoshuo.dev/contest/124" target="_blank">CSP2024 入门</a></em> &nbsp;&nbsp;一等奖</strong></th>
+                            <th>270 <span class="note">/ 400</span></th>
+                            <th>3634 <span class="note">/ 40430</span></th>
+                            <th>广东</th>
+                            <th>初二</th>
+                        </tr>
+                    </table>
+                    <br>
+                    <p class="note">貌似没有了...只是蒟蒻OIer...（悲）</p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div class="container" id="link">
+        <main>
+            <div class="card-container">
+                <a href="blog"><section class="card"><h2 style="color: #8ec7fc">My Blog [点击跳转]</h2></section></a>
+                <section class="card">
+                    <h2>社交帐号</h2>
+                    <p><strong><a href="https://github.com/SqrtOne" target="_blank">GitHub</a></strong></p>
+                    <p><strong><a href="https://space.bilibili.com/1537856589" target="_blank">Bilibili</a></strong></p>
+                    <p><strong><a href="https://www.luogu.com.cn/user/1353007" target="_blank">洛谷</a></strong></p>
+                    <p><strong><a href="https://bgm.tv/user/sqrtone" target="_blank">Bangumi</a></strong></p>
+                </section>
+            </div>
+
+            <footer><p>&copy; 2025 SqrtOne 版权所有</p></footer>
+        </main>
+    </div>
+</body>
+</html>

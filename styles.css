@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.gradient-bg {
+    background-image: linear-gradient(to right, #8ec7fc, #a2c7ff, #b7c6ff, #cbc5ff, #dec4ff);
+}
+
+header {
+    color: #333;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+aside {
+    width: 250px;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    padding: 1.5rem 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(142, 199, 252, 0.1);
+    color: #555;
+}
+
+nav a.active {
+    background-color: rgba(142, 199, 252, 0.2);
+    font-weight: bold;
+    border-left: 4px solid #8ec7fc;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex: 1;
+}
+
+.card-container-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 6px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+    color: #555;
+    font-size: 1.6rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.card p {
+    margin-bottom: 0.8rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+main a {
+    text-decoration: none;
+    color: #8ec7fc;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+main a:visited {
+    color: #8ec7fc;
+}
+
+footer {
+    text-align: center;
+    padding: 1.2rem;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+    background-color: transparent;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0.8rem 1rem;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    nav a.active {
+        border-left: none;
+        border-bottom: 3px solid #8ec7fc;
+    }
+
+    main {
+        margin: 0.5rem;
+        padding: 1.5rem;
+    }
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    height: 100vh;
+    border-radius: 15px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.chevron {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #b7c6ff;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(-45deg);
+    }
+    40% {
+        transform: translateY(10px) rotate(-45deg);
+    }
+    60% {
+        transform: translateY(5px) rotate(-45deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
