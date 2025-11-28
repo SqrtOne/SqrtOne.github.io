@@ -174,3 +174,18 @@ main a:hover {
 main a:visited {
     color: #8ec7fc;
 }
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-top: 8px;
+    background-color: #8ec7fc;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+a .btn {
+    color: white;
+}
