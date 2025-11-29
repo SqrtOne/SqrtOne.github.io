@@ -171,10 +171,6 @@ a:hover {
     text-decoration: underline;
 }
 
-a:visited {
-    color: #8ec7fc;
-}
-
 .btn {
     display: inline-block;
     padding: 6px 12px;
