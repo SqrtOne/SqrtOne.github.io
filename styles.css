@@ -162,16 +162,16 @@ footer {
     }
 }
 
-main a {
+a {
     text-decoration: none;
     color: #8ec7fc;
 }
 
-main a:hover {
+a:hover {
     text-decoration: underline;
 }
 
-main a:visited {
+a:visited {
     color: #8ec7fc;
 }
 
@@ -186,6 +186,11 @@ main a:visited {
     font-size: 14px;
 }
 
-a .btn {
+a.btn:hover {
+    text-decoration: none;
+}
+
+a.btn:visited {
     color: white;
 }
+

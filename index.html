@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SqrtOne 的个人网站">
     <title>SqrtOne</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
     <style>
         html {
             scroll-behavior: smooth;
@@ -82,44 +82,6 @@
             object-fit: cover;
         }
 
-        .progress-wrapper {
-            display: flex;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-
-        .progress-container {
-            width: 80%;
-            background-color: #e0e0e0;
-            border-radius: 25px;
-            height: 24px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) inset;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background-color: #b7c6ff;
-            border-radius: 25px;
-            position: relative;
-        }
-
-        .progress-text {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #fff;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .progress-kind {
-            margin-left: 12px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid #000; padding: 8px; text-align: center; }
         th { background-color: #f2f2f2; }
@@ -135,18 +97,19 @@
                 height: auto;
             }
 
-            .progress-container {
-                width: 60%;
-            }
-
             .container {
                 flex-direction: row;
             }
         }
+
+        .container:nth-child(2n + 3) {
+            background-color: #f0f0f0
+        }
     </style>
 </head>
+
 <body>
-<div class="block" style="background-color: #f0f0f0">
+<div class="block">
     <div class="container">
         <img src="cover.jpg" alt="cover" height="480" style="border-radius: 15px" class="card cover" />
     </div>
@@ -163,20 +126,20 @@
             <section class="card">
                 <h2>目录</h2>
                 <p><strong><a href="#info">About Me</a></strong></p>
-                <p><strong><a href="#blog">My Blog</a></strong></p>
                 <p><strong><a href="#mbti">My MBTI</a></strong></p>
                 <p><strong><a href="#prize">获奖信息</a></strong></p>
                 <p><strong><a href="#link">社交帐号</a></strong></p>
             </section>
             <section class="card">
-                <p><strong>本页已被浏览 <span id="busuanzi_page_pv">加载中...</span> 次</strong></p>
-                <p><span class="note">由 <a href="https://www.busuanzi.cc/" target="_blank">不蒜子®</a> 提供统计，特此鸣谢！</span></p>
+                <h2>Blog</h2>
+                <p>SqrtOne's Blog</p>
+                <a href="blog" class="btn">点击进入</a>
             </section>
         </div>
     </main>
 </div>
 
-<div class="container" id="info" style="background-color: #f0f0f0">
+<div class="container" id="info">
     <main>
         <div class="card-container">
             <section class="card">
@@ -209,108 +172,16 @@
     </main>
 </div>
 
-<div class="container" id="blog">
-    <main>
-        <div class="card-container">
-            <a href="blog">
-                <section class="card">
-                    <h2 style="color: #8ec7fc"><em>My Blog </em> [点击跳转]</h2>
-                </section>
-            </a>
-            <h2>最近文章</h2>
-            <iframe
-                    src="https://sqrtone.github.io/blog/last/"
-                    frameborder="0"
-                    scrolling="no"
-                    width="100%"
-                    height="240px"
-            ></iframe>
-        </div>
-    </main>
-</div>
-
-<div class="container" id="mbti" style="background-color: #f0f0f0">
+<div class="container" id="mbti">
     <main>
         <div class="card-container">
             <section class="card">
-                <h2><em>My MBTI</em>（荣格八维）<a href="https://www.jungus.cn/zh-hans/result/b5a3dfbf-6be7-476d-be06-ef282b1e68dc" target="_blank">测试结果:</a>
-                    INFP - 心有洞天</h2>
-                <div class="progress-wrapper">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 64%">
-                            <span class="progress-text">27.7</span>
-                        </div>
-                    </div>
-                    <span class="progress-kind">Se <span class="note">外倾感觉</span></span>
-                </div>
-
-                <div class="progress-wrapper">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 54%">
-                            <span class="progress-text">23.6</span>
-                        </div>
-                    </div>
-                    <span class="progress-kind">Si <span class="note">内倾感觉</span></span>
-                </div>
-
-                <div class="progress-wrapper">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 75%">
-                            <span class="progress-text">32.6</span>
-                        </div>
-                    </div>
-                    <span class="progress-kind">Ne <span class="note">外倾直觉</span></span>
-                </div>
-
-                <div class="progress-wrapper">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 65%">
-                            <span class="progress-text">28.2</span>
-                        </div>
-                    </div>
-                    <span class="progress-kind">Ni <span class="note">内倾直觉</span></span>
-                </div>
-
-                <div class="progress-wrapper">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 49%">
-                            <span class="progress-text">21.1</span>
-                        </div>
-                    </div>
-                    <span class="progress-kind">Te <span class="note">外倾思考</span></span>
-                </div>
-
-                <div class="progress-wrapper">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 70%">
-                            <span class="progress-text">30.6</span>
-                        </div>
-                    </div>
-                    <span class="progress-kind">Ti <span class="note">内倾思考</span></span>
-                </div>
-
-                <div class="progress-wrapper">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 76%">
-                            <span class="progress-text">32.8</span>
-                        </div>
-                    </div>
-                    <span class="progress-kind">Fe <span class="note">外倾情感</span></span>
-                </div>
-
-                <div class="progress-wrapper">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 100%">
-                            <span class="progress-text">43.4</span>
-                        </div>
-                    </div>
-                    <span class="progress-kind">Fi <span class="note">内倾情感</span></span>
-                </div>
-            </section>
-            <section class="card">
-                <p>“你也可能是 <strong>ENFP</strong> - 随性不拘 或 <strong>ISFP</strong> - 心灵手巧” —— <a href="https://www.jungus.cn/zh-hans/test/" target="_blank">jungus.cn</a></p>
-                <p><a href="https://www.16personalities.com/ch">16personalities</a> 测试结果: <strong>INFP-T</strong>&nbsp;&nbsp;&nbsp;
-                    <a href="https://totypes.com/">totypes</a> 测试结果: <strong>INFJ</strong> 劝告者 > <strong>INFP</strong> 化解者 > <strong>ISFP</strong> 创作者</p>
+                <h2><em>My MBTI</em></h2>
+                <p><strong><a href="https://www.jungus.cn/" target="_blank">Jungus</a></strong> 测试结果: <strong>INFP</strong> - 心有洞天 &nbsp;&nbsp;&nbsp;
+                    “你也可能是 <strong>ENFP</strong> - 随性不拘 或 <strong>ISFP</strong> - 心灵手巧”</p>
+                <p><strong><a href="https://www.16personalities.com/ch/" target="_blank">16Personalities</a></strong> 测试结果: <strong>INFP-T</strong>
+                <p><strong><a href="https://totypes.com/" target="_blank">Totypes</a></strong> 测试结果: <strong>INFJ</strong> 劝告者 > <strong>INFP</strong> 化解者 > <strong>ISFP</strong> 创作者</p>
+                <a href="my-mbti.html" target="_blank" class="btn">查看详情→</a>
             </section>
         </div>
     </main>
@@ -339,26 +210,59 @@
                     </tr>
                 </table>
                 <br>
-                <p>貌似没有了...只是蒟蒻OIer...（悲）&nbsp;&nbsp;&nbsp;(我的<a href="https://www.luogu.com.cn/user/1353007" target="_blank">洛谷</a>)</p>
+                <p>貌似没有了...只是蒟蒻OIer...（悲）（我的<a href="https://www.luogu.com.cn/user/1353007" target="_blank">洛谷</a>）</p>
             </section>
         </div>
     </main>
 </div>
 
-<div class="container" id="link" style="background-color: #f0f0f0">
+<div class="container" id="link">
     <main>
         <div class="card-container">
             <section class="card">
                 <h2>社交帐号</h2>
-                <p><strong><a href="https://bgithub.xyz/SqrtOne" target="_blank">GitHub</a></strong></p>
-                <p><strong><a href="https://space.bilibili.com/1537856589" target="_blank">Bilibili</a></strong></p>
-                <p><strong><a href="https://www.luogu.com.cn/user/1353007" target="_blank">洛谷</a></strong></p>
-                <p><strong><a href="https://bgm.tv/user/sqrtone" target="_blank">Bangumi</a></strong></p>
-                <p><strong><a href="mailto: SqrtOne@qq.com">邮箱</a></strong></p>
             </section>
-            <footer><p>&copy; 2025 SqrtOne 版权所有</p></footer>
         </div>
+        <div class="card-container-grid">
+            <section class="card">
+                <h2>bilibili</h2>
+                <p>B站听歌这一块</p>
+                <a href="https://space.bilibili.com/1537856589" target="_blank" class="btn">点击跳转→</a>
+            </section>
+            <section class="card">
+                <h2>GitHub</h2>
+                <p>全球最大同性交友平台</p>
+                <a href="https://bgithub.xyz/SqrtOne" target="_blank" class="btn">点击跳转→</a>
+            </section>
+            <section class="card">
+                <h2>Bangumi</h2>
+                <p>追番中，勿扰</p>
+                <a href="https://bgm.tv/user/sqrtone" target="_blank" class="btn">点击跳转→</a>
+            </section>
+            <section class="card">
+                <h2>洛谷</h2>
+                <p>红黑树，线段树，还是不可描树？</p>
+                <a href="https://www.luogu.com.cn/user/1353007" target="_blank" class="btn">点击跳转→</a>
+            </section>
+            <section class="card">
+                <h2>Blog</h2>
+                <p>SqrtOne's Blog</p>
+                <a href="blog" class="btn">点击进入</a>
+            </section>
+            <section class="card">
+                <h2>邮箱</h2>
+                <p>我的邮箱</p>
+                <a href="mailto: SqrtOne@qq.com" class="btn">发送邮件</a>
+            </section>
+            <section class="card">
+                <h2>本站</h2>
+                <p>本站已被 <strong><span id="busuanzi_site_uv">加载中...</span></strong> 人 浏览 <strong><span id="busuanzi_site_pv">加载中...</span></strong> 次</p>
+                <p class="note">由<a href="https://www.busuanzi.cc/" target="_blank">不蒜子®</a>提供统计</p>
+            </section>
+        </div>
+        <footer><p>&copy; 2025 SqrtOne 版权所有</p></footer>
     </main>
 </div>
+<script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
 </body>
 </html>
