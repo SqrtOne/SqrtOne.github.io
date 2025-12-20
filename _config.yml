@@ -1,7 +1,8 @@
 name: SqrtOne的小站
 description: SqrtOne的小站
 
-url: <%= ENV['JEKYLL_URL'] || "https://SqrtOne.github.io" %>
+url: ""
+baseurl: ""
 permalink: /blog/:title/
 
 markdown: kramdown
