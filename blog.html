@@ -1,0 +1,47 @@
+---
+permalink: /blog/
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ site.description }}">
+    <title>{{ site.name }} - 博客</title>
+    <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/styles.css">
+</head>
+<body>
+<header class="gradient-bg">
+    <h1>{{ site.name }}</h1>
+</header>
+
+<div class="container">
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="{{ site.url }}{{ site.baseurl }}">返回首页</a></li>
+                <li><a href="#" class="active">博客</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        {% for post in site.posts %}
+        <div class="card-container">
+            <section class="card">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.description |
+                    default: post.excerpt | strip_html | strip_newlines | truncate: 50, '...' }}</p>
+                <p class="note">写作时间: {{ post.date | date: "%Y-%m-%d" }}</p>
+                <a href="{{ post.url | relative_url }}" class="btn" style="color: white">阅读全文 →</a>
+            </section>
+        </div>
+        {% endfor %}
+        <footer><p>&copy; 2025 SqrtOne 版权所有</p></footer>
+    </main>
+</div>
+</body>
+</html>
+
+

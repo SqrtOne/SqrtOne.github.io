@@ -1,7 +1,7 @@
 name: SqrtOne的小站
 description: SqrtOne的小站
 
-url: ""
+url: "https://sqrtone.github.io"
 baseurl: ""
 permalink: /blog/:title/
 
