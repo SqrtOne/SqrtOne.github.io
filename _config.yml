@@ -1,0 +1,13 @@
+name: SqrtOne的小站
+description: SqrtOne的小站
+
+url: <%= ENV['JEKYLL_URL'] || "https://SqrtOne.github.io" %>
+permalink: /blog/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+  math_engine: mathjax
