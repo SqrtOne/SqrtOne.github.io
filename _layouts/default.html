@@ -1,0 +1,46 @@
+---
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description | default: site.description | strip_html | strip_newlines | truncate: 50, '...' }}">
+    <title>
+        {% if page.title %}
+            {{ page.title }} - {{ site.name }}
+        {% else %}
+            {{ site.name }}
+        {% endif %}
+    </title>
+    <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/styles.css">
+    {% comment %} 页面专属样式 {% endcomment %}
+    {% if page.custom_css %}
+        {{ page.custom_css }}
+    {% endif %}
+</head>
+<body>
+<header>
+    <h1>{{ site.name }}</h1>
+</header>
+
+<div class="container">
+    {% comment %} 引入侧边栏组件（适配所有页面） {% endcomment %}
+    {% include sidebar.html %}
+
+    <main>
+        {{ content }}
+    </main>
+</div>
+
+{% comment %} 文章页专属脚本（代码高亮、MathJax） {% endcomment %}
+{% if page.layout == 'post' %}
+
+{% endif %}
+
+{% comment %} 其他页面专属脚本 {% endcomment %}
+{% if page.custom_js %}
+    {{ page.custom_js }}
+{% endif %}
+</body>
+</html>

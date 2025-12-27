@@ -98,6 +98,7 @@ main {
     aside {
         position: static; /* 取消固定定位 */
         width: 100%;
+        margin-top: var(--spacing-md);
         padding: 1rem 0;
     }
 
@@ -236,15 +237,6 @@ header h1 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-}
-
-@media (max-width: 768px) {
-    .topbar-title {
-        font-size: 1rem;
-    }
-    .topbar-right .topbar-user {
-        display: none;
-    }
 }
 
 blockquote {

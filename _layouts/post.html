@@ -1,67 +1,43 @@
 ---
+layout: default
 ---
 
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ page.description |
-        default: post.excerpt | strip_html | strip_newlines | truncate: 50, '...' }}">
-    <title>{{ page.title }} - {{ site.name }}</title>
-    <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css">
-    <style>
-
-    </style>
-</head>
-<body>
-<header class="gradient-bg">
-    <h1>{{ site.name }}</h1>
-</header>
-
-<div class="container">
-    <aside>
-        <nav>
-            <ul>
-                <li><a href="{{ site.url }}{{ site.baseurl }}">首页</a></li>
-                <li><a href="{{ site.url }}{{ site.baseurl }}/blog">博客</a></li>
-                <li><a href="#" class="active">{{ page.title }}</a></li>
-            </ul>
-        </nav>
-    </aside>
-
-    <main>
-        <div class="card-container">
-            <section>
-                <h1 class="title">{{ page.title }}</h1>
-            </section>
-            <section>
-                {{ content }}
-            </section>
-            <p style="text-align: center"><strong>本页已被浏览 <span id="busuanzi_page_pv">加载中...</span> 次</strong> ·
-                <em>由 <a href="https://www.busuanzi.cc/" target="_blank">不蒜子®</a> 提供统计</em></p>
-            {% include giscus.html %}
-        </div>
-        <footer><p>&copy; 2025 SqrtOne 版权所有</p></footer>
-    </main>
+<div class="card-container">
+    <section>
+        <h1 class="title">{{ page.title }}</h1>
+    </section>
+    <section>
+        {{ content }}
+    </section>
+    <p style="text-align: center">
+        <strong>本页已被浏览 <span id="busuanzi_page_pv">加载中...</span> 次</strong> ·
+        <em>由 <a href="https://www.busuanzi.cc/" target="_blank">不蒜子®</a> 提供统计</em>
+    </p>
+    {% include giscus.html %}
 </div>
+<footer><p>&copy; 2025 SqrtOne 版权所有</p></footer>
 
+{% capture custom_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css">
+{% endcapture %}
+{% assign page.custom_css = custom_css %}
+
+{% capture custom_js %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
 <script>hljs.highlightAll();</script>
 
 <script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
+
 <script>
     MathJax = {
         tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],  // 行内公式分隔符
-            displayMath: [['$$', '$$'], ['\\[', '\\]']]  // 块级公式分隔符
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
         },
         startup: {
             pageReady: () => {
                 return MathJax.startup.defaultPageReady().then(() => {
-                    // 确保所有公式都被渲染
                     MathJax.typeset();
                 });
             }
@@ -69,6 +45,5 @@
     };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
-</body>
-</html>
-
+{% endcapture %}
+{% assign page.custom_js = custom_js %}
