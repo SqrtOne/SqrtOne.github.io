@@ -1,26 +1,27 @@
-
 <aside>
     <nav>
         <ul>
             <li>
-                <a href="{{ site.url }}{{ site.baseurl }}"
+                <a href="{{ site.baseurl }}/"
                    {% if page.url == '/' or page.url == '/index.html' %}class="active"{% endif %}>
                 首页
                 </a>
             </li>
+
             <li>
-                <a href="{{ site.url }}{{ site.baseurl }}/blog"
-                   {% if page.url == '/blog.html' %}class="active"{% endif %}>
+                <a href="{{ site.baseurl }}/blog"
+                   {% if page.url == '/blog' or page.url == '/blog/' or page.url == '/blog.html' %}class="active"{% endif %}>
                 blog
                 </a>
             </li>
+
             <li>
-                <a href="{{ site.url }}{{ site.baseurl }}/about"
-                   {% if page.url == '/about.html' %}class="active"{% endif %}>
+                <a href="{{ site.baseurl }}/about"
+                   {% if page.url == '/about' or page.url == '/about/' or page.url == '/about.html' %}class="active"{% endif %}>
                 关于我
                 </a>
             </li>
-            {% comment %} 仅文章页显示当前文章标题的 li {% endcomment %}
+
             {% if page.layout == 'post' %}
             <li>
                 <a href="#" class="active">{{ page.title }}</a>

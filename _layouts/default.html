@@ -14,10 +14,9 @@
         {% endif %}
     </title>
     <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/styles.css">
-    {% comment %} 页面专属样式 {% endcomment %}
-    {% if page.custom_css %}
-        {{ page.custom_css }}
-    {% endif %}
+
+    {{ layout.custom_css }}
+    {{ page.custom_css }}
 </head>
 <body>
 <header>
@@ -33,14 +32,7 @@
     </main>
 </div>
 
-{% comment %} 文章页专属脚本（代码高亮、MathJax） {% endcomment %}
-{% if page.layout == 'post' %}
-
-{% endif %}
-
-{% comment %} 其他页面专属脚本 {% endcomment %}
-{% if page.custom_js %}
-    {{ page.custom_js }}
-{% endif %}
+{{ layout.custom_js }}
+{{ page.custom_js }}
 </body>
 </html>
