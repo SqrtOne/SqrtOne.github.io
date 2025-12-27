@@ -21,6 +21,7 @@
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
     --header-height: 70px;
+    --aside-width: 250px;
 }
 
 * {
@@ -47,7 +48,7 @@ body {
 }
 
 aside {
-    width: 250px;
+    width: var(--aside-width);
     background-color: var(--bg-white);
     box-shadow: 2px 0 5px rgba(0,0,0,0.05);
     padding: var(--spacing-lg) 0;
@@ -85,7 +86,8 @@ nav a.active {
 
 main {
     flex: 1;
-    margin: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(250px + var(--spacing-md));
+    margin: calc(var(--spacing-md) + var(--header-height)) var(--spacing-md)
+        var(--spacing-md) calc(var(--spacing-md) + var(--aside-width));
     padding: var(--spacing-xl);
     display: flex;
     flex-direction: column;
