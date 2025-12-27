@@ -41,7 +41,6 @@ body {
     padding-top: var(--header-height);
 }
 
-
 .container {
     display: flex;
     flex: 1;
@@ -52,11 +51,10 @@ aside {
     background-color: var(--bg-white);
     box-shadow: 2px 0 5px rgba(0,0,0,0.05);
     padding: var(--spacing-lg) 0;
-
-    position: fixed; /* 固定定位，不随滚动移动 */
-    top: var(--header-height); /* 与顶部保持距离 */
-    bottom: 0; /* 底部与视口底部对齐 */
-    overflow-y: auto; /* 当内容过长时，自身出现滚动条 */
+    position: fixed;
+    top: var(--header-height);
+    bottom: 0;
+    overflow-y: auto;
 }
 
 nav ul {
@@ -82,58 +80,55 @@ nav a.active {
     border-left: 4px solid var(--primary-color);
 }
 
-
-
 main {
     flex: 1;
-    margin: calc(var(--spacing-md) + var(--header-height)) var(--spacing-md)
-        var(--spacing-md) calc(var(--spacing-md) + var(--aside-width));
+    margin: calc(var(--spacing-md) + var(--header-height)) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + var(--aside-width));
     padding: var(--spacing-xl);
     display: flex;
     flex-direction: column;
 }
 
+/* ========== 响应式核心修复：移动端 0留白/0遮挡/0错位 完整版 ========== */
 @media (max-width: 768px) {
+    /* 1. 重置body顶部间距，彻底取消全局留白叠加 */
+    body {
+        padding-top: 0;
+    }
     .container {
         flex-direction: column;
     }
-
     aside {
-        position: static; /* 取消固定定位 */
+        position: static;
         width: 100%;
-        margin-top: 0;
-        padding: 1rem 0;
+        padding: 0; /* ✅ 根治：删掉侧边栏上下内边距，无多余留白 */
+        margin-top: 0; /* ✅ 根治：删掉侧边栏顶部外边距，导航顶格贴合，无空白 */
+        box-shadow: none; /* 移动端取消侧边栏阴影，视觉更紧凑 */
     }
-
     main {
-        margin-left: 0;
+        margin: var(--spacing-md); /* ✅ 四个方向统一间距，无超大留白 */
+        padding: var(--spacing-lg);
     }
-
     nav ul {
         display: flex;
         flex-wrap: wrap;
+        gap: 0; /* ✅ 导航按钮之间无空隙，排版紧凑 */
     }
-
     nav a {
-        padding: 0.8rem 1rem;
+        /* ✅ 核心修改：缩小移动端导航内边距，解决按钮上下留白过大问题 */
+        padding: 0.6rem 0.8rem; 
         border-left: none;
         border-bottom: 3px solid transparent;
+        flex-shrink: 0; /* 防止导航按钮被挤压变形 */
     }
-
     nav a.active {
         border-left: none;
         border-bottom: 3px solid var(--primary-color);
     }
 }
 
-
-
 .card-container {
     margin-bottom: var(--spacing-xl);
     flex: 1;
-}
-
-.card-container {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
@@ -206,8 +201,6 @@ a:hover {
     color: var(--bg-white);
 }
 
-
-
 footer {
     text-align: center;
     padding: 1.2rem;
@@ -219,18 +212,18 @@ footer {
 }
 
 header {
-    position: fixed; /* 固定在顶部 */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: var(--header-height); /* 顶栏高度 */
+    height: var(--header-height);
     background-color: var(--bg-white);
     box-shadow: var(--shadow-sm);
     padding: 0 var(--spacing-lg);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 99; /* 确保顶栏在侧边栏之上 */
+    z-index: 999; /* 置顶层级，永不被遮挡 */
 }
 
 header h1 {
@@ -249,4 +242,3 @@ blockquote {
     border-radius: 0 6px 6px 0;
     color: #333;
 }
-
