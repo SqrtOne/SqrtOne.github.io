@@ -9,21 +9,15 @@
     <meta name="description" content="{{ page.description |
         default: post.excerpt | strip_html | strip_newlines | truncate: 50, '...' }}">
     <title>{{ page.title }} - {{ site.name }}</title>
-    <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css">
     <style>
-        blockquote {
-            border-left: 4px solid #8ec7fc;
-            padding: 0.1rem 1.5rem;
-            background: #f0f8fb;
-            border-radius: 0 6px 6px 0;
-            color: #333;
-        }
+
     </style>
 </head>
 <body>
 <header class="gradient-bg">
-    <h1>{{ page.title }}</h1>
+    <h1>{{ site.name }}</h1>
 </header>
 
 <div class="container">
@@ -39,10 +33,12 @@
 
     <main>
         <div class="card-container">
-            <section class="card">
+            <section>
+                <h1>{{ page.title }}</h1>
+            </section>
+            <section>
                 {{ content }}
             </section>
-            <p class="note">写作时间: {{ page.date | date: "%Y-%m-%d" }}</p>
             <p style="text-align: center"><strong>本页已被浏览 <span id="busuanzi_page_pv">加载中...</span> 次</strong> ·
                 <em>由 <a href="https://www.busuanzi.cc/" target="_blank">不蒜子®</a> 提供统计</em></p>
             {% include giscus.html %}
