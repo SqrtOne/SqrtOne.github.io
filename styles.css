@@ -101,7 +101,7 @@ main {
     aside {
         position: static; /* 取消固定定位 */
         width: 100%;
-        margin-top: var(--spacing-md);
+        margin-top: 0;
         padding: 1rem 0;
     }
 
@@ -249,3 +249,4 @@ blockquote {
     border-radius: 0 6px 6px 0;
     color: #333;
 }
+
