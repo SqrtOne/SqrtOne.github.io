@@ -1,5 +1,4 @@
 ---
-permalink: /blog/
 ---
 
 <!DOCTYPE html>
@@ -8,12 +7,12 @@ permalink: /blog/
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ site.description }}">
-    <title>博客 - {{ site.name }}</title>
+    <title>{{ site.name }}</title>
     <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/styles.css">
 </head>
 <body>
 <header class="gradient-bg">
-    <h1>博客 - {{ site.name }}</h1>
+    <h1>{{ site.name }}</h1>
 </header>
 
 <div class="container">
@@ -21,7 +20,7 @@ permalink: /blog/
         <nav>
             <ul>
                 <li><a href="{{ site.url }}{{ site.baseurl }}">首页</a></li>
-                <li><a href="#" class="active">博客</a></li>
+                <li><a href="#" class="active">blog</a></li>
             </ul>
         </nav>
     </aside>
@@ -43,3 +42,5 @@ permalink: /blog/
 </div>
 </body>
 </html>
+
+
