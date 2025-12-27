@@ -148,7 +148,7 @@ section:hover {
     box-shadow: var(--shadow-lg);
 }
 
-section h1 {
+section .title {
     text-align: center;
     color: var(--primary-color);
     font-size: 2rem;
