@@ -1,6 +1,7 @@
 :root {
     --primary-color: #8ec7fc;
     --primary-color-dark: #7bb8e6;
+    --primary-color-light: #f0f8fb;
     --primary-light: rgba(142, 199, 252, 0.1);
     --primary-medium: rgba(142, 199, 252, 0.2);
     --text-primary: #333;
@@ -147,7 +148,11 @@ section:hover {
     box-shadow: var(--shadow-lg);
 }
 
-
+section h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
 
 h2 {
     margin-bottom: var(--spacing-md);
@@ -227,11 +232,10 @@ header {
 header h1 {
     font-size: 1.5rem;
     font-weight: 600;
-    background: linear-gradient(90deg, #8ec7fc, #b7c6ff);
+    background: var(--primary-color);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-style: italic;
 }
 
 @media (max-width: 768px) {
@@ -241,4 +245,12 @@ header h1 {
     .topbar-right .topbar-user {
         display: none;
     }
+}
+
+blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding: 0.1rem 1.5rem;
+    background: var(--primary-color-light);
+    border-radius: 0 6px 6px 0;
+    color: #333;
 }
