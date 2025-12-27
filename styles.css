@@ -20,6 +20,7 @@
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
+    --header-height: 70px;
 }
 
 * {
@@ -36,7 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 25px;
+    padding-top: var(--header-height);
 }
 
 
@@ -51,9 +52,9 @@ aside {
     box-shadow: 2px 0 5px rgba(0,0,0,0.05);
     padding: var(--spacing-lg) 0;
 
-    position: fixed;  /* 固定定位，不随滚动移动 */
-    top: 70px;        /* 与顶部保持70px距离（对应header高度） */
-    bottom: 0;        /* 底部与视口底部对齐 */
+    position: fixed; /* 固定定位，不随滚动移动 */
+    top: var(--header-height); /* 与顶部保持距离 */
+    bottom: 0; /* 底部与视口底部对齐 */
     overflow-y: auto; /* 当内容过长时，自身出现滚动条 */
 }
 
@@ -220,7 +221,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    height: 70px; /* 顶栏高度 */
+    height: var(--header-height); /* 顶栏高度 */
     background-color: var(--bg-white);
     box-shadow: var(--shadow-sm);
     padding: 0 var(--spacing-lg);
