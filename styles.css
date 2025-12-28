@@ -21,7 +21,6 @@
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
     --header-height: 70px;
-    --aside-width: 250px;
 }
 
 * {
@@ -47,44 +46,29 @@ body {
     flex: 1;
 }
 
-aside {
-    width: var(--aside-width);
-    background-color: var(--bg-white);
-    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-    padding: var(--spacing-lg) 0;
-
-    position: fixed; /* 固定定位，不随滚动移动 */
-    top: var(--header-height); /* 与顶部保持距离 */
-    bottom: 0; /* 底部与视口底部对齐 */
-    overflow-y: auto; /* 当内容过长时，自身出现滚动条 */
-}
-
 nav ul {
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 nav a {
+    font-size: 1.2rem;
+    font-weight: 450;
     display: block;
-    padding: 0.8rem var(--spacing-lg);
-    color: var(--text-primary);
+    color: var(--primary-color-dark);
     text-decoration: none;
     transition: background-color 0.3s;
+    padding: 0.8rem 1rem;
+    border-left: none;
+    border-bottom: 3px solid transparent;
 }
 
-nav a:hover {
-    background-color: var(--primary-light);
-    color: var(--text-secondary);
-}
 
-nav a.active {
-    background-color: var(--primary-medium);
-    font-weight: bold;
-    border-left: 4px solid var(--primary-color);
-}
 
 main {
     flex: 1;
-    margin: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + var(--aside-width));
+    margin: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md));
     padding: var(--spacing-xl);
     display: flex;
     flex-direction: column;
@@ -99,33 +83,8 @@ main {
         flex-direction: column;
     }
 
-    aside {
-        position: static; /* 取消固定定位 */
-        width: 100%;
-        margin-top: 0;
-        padding: 0 0;
-        z-index: 98;
-        max-height: 100px;
-    }
-
     main {
         margin-left: 0;
-    }
-
-    nav ul {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    nav a {
-        padding: 0.8rem 1rem;
-        border-left: none;
-        border-bottom: 3px solid transparent;
-    }
-
-    nav a.active {
-        border-left: none;
-        border-bottom: 3px solid var(--primary-color);
     }
 }
 
