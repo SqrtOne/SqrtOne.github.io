@@ -1,6 +1,9 @@
 name: 晴理·SqrtOneの日记本
 description: 晴理·SqrtOneの日记本
 
+avatar: https://ql-file.netlify.app/avatar.jpg
+background_image: https://ql-file.netlify.app/bg.jpg
+
 url: "https://sqrtone.github.io"
 baseurl: ""
 permalink: /blog/:title/
