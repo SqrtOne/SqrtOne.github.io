@@ -3,14 +3,39 @@ layout: default
 title: blog
 ---
 
-{% for post in site.posts %}
+
 <div class="card-container">
-    <section class="card">
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 50, '...' }}</p>
-        <p class="note">写作时间: {{ post.date | date: "%Y-%m-%d" }}</p>
-        <a href="{{ post.url | relative_url }}" class="btn" style="color: white">阅读全文 →</a>
-    </section>
+    {% for post in site.posts %}
+        <section class="card">
+        {% if post.title %}
+            <div>{{ post.content }}</div>
+            <hr>
+            <p class="note">创建时间: {{ post.date | date: "%Y-%m-%d" }}</p>
+            <a href="{{ post.url | relative_url }}" class="btn" style="color: white">查看原文 →</a>
+        {% else %}
+            <h2>{{ post.title }}</h2>
+            <p>
+<!--                {{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 50, '...' }}-->
+                {% if post.description %}
+                    简介：{{ post.description }}
+                {% else %}
+                    {{ post.excerpt | strip_html | strip_newlines | truncate: 100, '...' }}
+                {% endif %}
+            </p>
+            <p class="note">创建时间: {{ post.date | date: "%Y-%m-%d" }}</p>
+            <a href="{{ post.url | relative_url }}" class="btn" style="color: white">阅读全文 →</a>
+        {% endif %}
+        </section>
+    {% endfor %}
 </div>
-{% endfor %}
-<footer><p>&copy; 2025 SqrtOne 版权所有</p></footer>
+<footer><p>&copy; 2025 - <span id="nowYear"></span> SqrtOne 版权所有</p></footer>
+
+<!-- css -->
+<style>
+    hr {
+        background-color: var(--text-secondary);
+    }
+</style>
+
+<!-- js -->
+<script src="{{ site.url }}{{ site.baseurl }}/script.js" defer></script>

@@ -3,7 +3,14 @@ layout: default
 ---
 
 <div class="card-container">
-    <h1 class="title">{{ page.title }}</h1>
+    {% if page.title %}
+    <section>
+        <h1 class="title">{{ page.title }}</h1>
+        {% assign word_count = content | strip_html | number_of_words %}
+        {% assign reading_time = word_count | divided_by: 300 | plus: 1 %}
+        <p>本文共 {{ word_count }} 字 · 预计需 {{ reading_time }} 分钟阅读</p>
+    </section>
+    {% endif %}
     <section>
         {{ content }}
     </section>
@@ -13,7 +20,7 @@ layout: default
     </p>
     {% include giscus.html %}
 </div>
-<footer><p>&copy; 2025 SqrtOne 版权所有</p></footer>
+<footer><p>&copy; 2025 - <span id="nowYear"></span> SqrtOne 版权所有</p></footer>
 
 <!-- css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css">
