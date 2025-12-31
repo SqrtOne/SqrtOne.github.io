@@ -114,18 +114,32 @@ section:hover {
     box-shadow: var(--shadow-lg);
 }
 
-section .title {
+.title {
     text-align: center;
     color: var(--primary-color);
     font-size: 2rem;
 }
 
-h2 {
+section h1, section h2, section h3 {
     margin-bottom: var(--spacing-md);
     color: var(--text-secondary);
-    font-size: 1.4rem;
     padding-bottom: var(--spacing-sm);
     border-bottom: 1px solid var(--border-light);
+}
+
+section h1 {
+    font-size: 1.8rem;
+    margin-top: var(--spacing-xl);
+}
+
+section h2 {
+    font-size: 1.5rem;
+    margin-top: var(--spacing-lg);
+}
+
+section h3 {
+    font-size: 1.3rem;
+    margin-top: var(--spacing-md);
 }
 
 p {
