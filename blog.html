@@ -8,22 +8,22 @@ title: blog
     {% for post in site.posts %}
         <section class="card">
         {% if post.title %}
-            <div>{{ post.content }}</div>
-            <hr>
-            <p class="note">创建时间: {{ post.date | date: "%Y-%m-%d" }}</p>
-            <a href="{{ post.url | relative_url }}" class="btn" style="color: white">查看原文 →</a>
-        {% else %}
             <h2>{{ post.title }}</h2>
             <p>
-<!--                {{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 50, '...' }}-->
+                <!-- {{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 50, '...' }}-->
                 {% if post.description %}
-                    简介：{{ post.description }}
+                简介：{{ post.description }}
                 {% else %}
-                    {{ post.excerpt | strip_html | strip_newlines | truncate: 100, '...' }}
+                {{ post.excerpt | strip_html | strip_newlines | truncate: 100, '...' }}
                 {% endif %}
             </p>
             <p class="note">创建时间: {{ post.date | date: "%Y-%m-%d" }}</p>
-            <a href="{{ post.url | relative_url }}" class="btn" style="color: white">阅读全文 →</a>
+            <a href="{{ post.url | relative_url }}">阅读全文 →</a>
+        {% else %}
+            <div>{{ post.content }}</div>
+            <hr>
+            <p class="note">创建时间: {{ post.date | date: "%Y-%m-%d" }}</p>
+            <a href="{{ post.url | relative_url }}">查看原文 →</a>
         {% endif %}
         </section>
     {% endfor %}
