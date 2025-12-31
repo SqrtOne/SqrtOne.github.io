@@ -7,7 +7,7 @@ title: blog
 <div class="card-container">
     {% for post in site.posts %}
         <section class="card">
-        {% if post.title %}
+        {% if post.kind == "article" %}
             <h2>{{ post.title }}</h2>
             <p>
                 <!-- {{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 50, '...' }}-->

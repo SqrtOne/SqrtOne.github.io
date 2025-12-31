@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 测试
+kind: article
 description: 测试文档
 ---
 
