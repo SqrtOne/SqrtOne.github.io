@@ -4,7 +4,7 @@ layout: default
 
 <div class="card-container">
     {% if page.kind == "article" %}
-    <section>
+    <section class="border">
         <h1 class="title">{{ page.title }}</h1>
         {% assign word_count = content | strip_html | number_of_words %}
         {% assign reading_time = word_count | divided_by: 300 | plus: 1 %}
