@@ -114,6 +114,10 @@ section:hover {
     box-shadow: var(--shadow-lg);
 }
 
+.border {
+    border: 2px solid var(--primary-color);
+}
+
 .title {
     text-align: center;
     color: var(--primary-color);
