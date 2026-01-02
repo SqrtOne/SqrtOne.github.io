@@ -3,87 +3,83 @@ layout: default
 title: 关于我
 ---
 
-<div class="container">
-    <main class="first">
-        <main class="second">
-            <section class="wide border">
-                <h1 style="color: var(--primary-color)">晴理 · SqrtOne</h1>
-                <div style="display: flex">
-                    <div style="flex: 1">
-                        <p><strong>QL SqrtOne | 以爱之名 你还愿意吗</strong></p>
-                        <p><strong>性别</strong>: 男生 <span class="note">(想成为温柔的男孩纸)</span></p>
-                        <p><strong>MBTI</strong>: <strong style="color: #A0EE00">INFP</strong></p>
-                        <p><strong>生日</strong>: 2010-10-20 - 天秤座</p>
-                        <p><strong>年龄</strong>: <span id="age">[请计算]</span></p>
-                        <p><strong>身份</strong>: 学生, OIer <span class="note">(信息学竞赛选手)</span></p>
-                        <p><strong>粉籍</strong>: 生米 <span class="note">(周深粉丝)</span>
-                            <del>线下没见到过同担ww</del>
-                        </p>
-                        <p><strong>最喜欢的歌</strong>: <a href="https://www.bilibili.com/video/BV1SK4y1477d/?p=7"
-                                                           target="_blank">周深 - 起风了</a></p>
-                        <p><strong>追番</strong>: <a href="https://bgm.tv/user/sqrtone" target="_blank">《秒速五厘米》等</a> &nbsp;&nbsp;&nbsp;</p>
-                        <p><strong>游戏</strong>: Minecraft</p>
-                        <p><strong>联系方式</strong>: <a href="{{ site.url }}{{ site.baseurl }}">请返回首页获取</a></p>
-                    </div>
-                    <img src="{{ site.avatar }}" class="avatar" alt="avatar" />
-                </div>
-            </section>
-
-            <section class="wide">
-                <h3>ID の 变迁史：</h3>
-                <div id="id-timeline">
-                    <button class="btn" onclick="showTimeline()" style="text-align: center; border: none">
-                        展开</button>
-                </div>
-            </section>
-        </main>
-        <main class="second">
-            <section>
-                <p><strong>距离我的<span id="next-year-age"></span>生日还剩：</strong></p>
-                <p><span style="font-size: 50px; color: var(--primary-color-dark)" id="days-to-birth">
-                    <noscript style="color: red">??</noscript>
-                </span> 天</p>
-                <p id="birth-vlog">
-                    <noscript style="color: red">需要开启 Javascript...</noscript>
+<main class="second">
+    <section class="wide border">
+        <h1 style="color: var(--primary-color)">晴理 · SqrtOne</h1>
+        <div style="display: flex">
+            <div style="flex: 1">
+                <p><strong>QL SqrtOne | 以爱之名 你还愿意吗</strong></p>
+                <p><strong>性别</strong>: 男生 <span class="note">(想成为温柔的男孩纸)</span></p>
+                <p><strong>MBTI</strong>: <strong style="color: #A0EE00">INFP</strong></p>
+                <p><strong>生日</strong>: 2010-10-20 - 天秤座</p>
+                <p><strong>年龄</strong>: <span id="age">[请计算]</span></p>
+                <p><strong>身份</strong>: 学生, OIer <span class="note">(信息学竞赛选手)</span></p>
+                <p><strong>粉籍</strong>: 生米 <span class="note">(周深粉丝)</span>
+                    <del>线下没见到过同担ww</del>
                 </p>
-            </section>
+                <p><strong>最喜欢的歌</strong>: <a href="https://www.bilibili.com/video/BV1SK4y1477d/?p=7"
+                                                   target="_blank">周深 - 起风了</a></p>
+                <p><strong>追番</strong>: <a href="https://bgm.tv/user/sqrtone" target="_blank">《秒速五厘米》等</a> &nbsp;&nbsp;&nbsp;</p>
+                <p><strong>游戏</strong>: Minecraft</p>
+                <p><strong>联系方式</strong>: <a href="{{ site.url }}{{ site.baseurl }}">请返回首页获取</a></p>
+            </div>
+            <img src="{{ site.avatar }}" class="avatar" alt="avatar" />
+        </div>
+    </section>
 
-            <section class="desktop-only">
-                <p><strong><del>[广告位招租]</del></strong></p>
-                <p>好吧我想不到这里放什么了……</p>
-            </section>
+    <section class="wide">
+        <h3>ID の 变迁史：</h3>
+        <div id="id-timeline">
+            <button class="btn" onclick="showTimeline()" style="text-align: center; border: none">
+                展开</button>
+        </div>
+    </section>
+</main>
+<main class="second">
+    <section>
+        <p><strong>距离我的<span id="next-year-age"></span>生日还剩：</strong></p>
+        <p><span style="font-size: 50px; color: var(--primary-color-dark)" id="days-to-birth">
+            <noscript style="color: red">??</noscript>
+        </span> 天</p>
+        <p id="birth-vlog">
+            <noscript style="color: red">需要开启 Javascript...</noscript>
+        </p>
+    </section>
 
-            <section>
-                <h3><strong style="color: #A0EE00">INFP</strong> 4w5-??/??-495</h3>
-                <div class="timeline">
-                    <p>2025.09.03 - 16Personalities 测试结果：
-                        <strong style="color: #A0EE00">INFP-T</strong> 调停者</p>
-                    <p>2025.10.04 - Jungus 测试结果：
-                        <strong style="color: #A0EE00">INFP</strong> - 心有洞天 <br>“你也可能是 <strong style="color: #00CD00">ENFP</strong> - 随性不拘 或 <strong style="color: #FFFF00; background-color: #ccc">ISFP</strong> - 心灵手巧”</p>
-                    <p>2025.11.22 - Totypes 测试结果：
-                        <strong style="color: #A0EE00">INFJ</strong> 劝告者 > <strong style="color: #A0EE00">INFP</strong> 化解者 > <strong style="color: #FFFF00; background-color: #ccc">ISFP</strong> 创作者</p>
-                </div>
-            </section>
+    <section class="desktop-only">
+        <p><strong><del>[广告位招租]</del></strong></p>
+        <p>好吧我想不到这里放什么了……</p>
+    </section>
 
-            <section>
-                <h3>一个蒟蒻 OIer の 获奖信息（悲</h3>
-                <div class="timeline">
-                    <p><strong><a href="https://oier.baoshuo.dev/contest/124" target="_blank">CSP2024 入门</a> 一等奖</strong>
-                        <br>广东 | 初二 | 得分: 270/400</p>
-                    <p><strong><a href="https://oier.baoshuo.dev/contest/132" target="_blank">CSP2025 提高</a> 三等奖</strong>
-                        <br>广东 | 初三 | 得分: 40/400</p>
-                    <p>我希望它不止于此。。。(/TДT)/</p>
-                </div>
-            </section>
-        </main>
-        <footer class="wide">
-            <p>本站已被 <strong><span id="busuanzi_site_uv">加载中...</span></strong> 人 浏览 <strong><span
-                    id="busuanzi_site_pv">加载中...</span></strong> 次 <strong>·</strong> 由<a href="https://www.busuanzi.cc/" target="_blank" style="color: var(--primary-color-dark)">不蒜子®</a>提供统计
-            </p>
-            <p>&copy; 2025 - <span id="nowYear"></span> SqrtOne 版权所有</p>
-        </footer>
-    </main>
-</div>
+    <section>
+        <h3><strong style="color: #A0EE00">INFP</strong> 4w5-??/??-495</h3>
+        <div class="timeline">
+            <p>2025.09.03 - 16Personalities 测试结果：
+                <strong style="color: #A0EE00">INFP-T</strong> 调停者</p>
+            <p>2025.10.04 - Jungus 测试结果：
+                <strong style="color: #A0EE00">INFP</strong> - 心有洞天 <br>“你也可能是 <strong style="color: #00CD00">ENFP</strong> - 随性不拘 或 <strong style="color: #FFFF00; background-color: #ccc">ISFP</strong> - 心灵手巧”</p>
+            <p>2025.11.22 - Totypes 测试结果：
+                <strong style="color: #A0EE00">INFJ</strong> 劝告者 > <strong style="color: #A0EE00">INFP</strong> 化解者 > <strong style="color: #FFFF00; background-color: #ccc">ISFP</strong> 创作者</p>
+        </div>
+    </section>
+
+    <section>
+        <h3>一个蒟蒻 OIer の 获奖信息（悲</h3>
+        <div class="timeline">
+            <p><strong><a href="https://oier.baoshuo.dev/contest/124" target="_blank">CSP2024 入门</a> 一等奖</strong>
+                <br>广东 | 初二 | 得分: 270/400</p>
+            <p><strong><a href="https://oier.baoshuo.dev/contest/132" target="_blank">CSP2025 提高</a> 三等奖</strong>
+                <br>广东 | 初三 | 得分: 40/400</p>
+            <p>我希望它不止于此。。。(/TДT)/</p>
+        </div>
+    </section>
+</main>
+<footer class="wide">
+    <p>本站已被 <strong><span id="busuanzi_site_uv">加载中...</span></strong> 人 浏览 <strong><span
+            id="busuanzi_site_pv">加载中...</span></strong> 次 <strong>·</strong> 由<a href="https://www.busuanzi.cc/" target="_blank" style="color: var(--primary-color-dark)">不蒜子®</a>提供统计
+    </p>
+    <p>&copy; 2025 - <span id="nowYear"></span> SqrtOne 版权所有</p>
+</footer>
 
 <!-- css -->
 <style>
