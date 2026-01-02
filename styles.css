@@ -68,7 +68,7 @@ nav a {
 
 main {
     flex: 1;
-    margin: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md));
+    margin: var(--spacing-md) var(--spacing-md) var(--spacing-md) var(--spacing-md);
     padding: var(--spacing-xl);
     display: flex;
     flex-direction: column;
