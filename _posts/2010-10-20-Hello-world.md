@@ -3,6 +3,7 @@ layout: post
 title: 测试
 kind: article
 description: 测试文档
+upddate: 2020-02-02
 ---
 
 # 测试文档
@@ -41,10 +42,8 @@ $114514$ 公式
 
 [主页](https://sqrtone.github.io)
 
-> 绝对链接图片测试
+> 图片测试
 
 ![](https://ql-file.netlify.app/avatar.jpg)
 
-> 相对链接图片测试
-
-![](avatar.jpg)
+~~更新日期乱写的别管~~

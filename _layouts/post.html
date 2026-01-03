@@ -13,6 +13,11 @@ layout: default
     {% endif %}
     <section>
         {{ content }}
+        <p class="note">创建于 {{ post.date | date: "%Y-%m-%d" }}
+            {{ if post.upddate }}
+            · 修改于 post.upddate
+            {{ endif }}
+        </p>
     </section>
     <p style="text-align: center">
         <strong>本页已被浏览 <span id="busuanzi_page_pv">加载中...</span> 次</strong> ·
