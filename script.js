@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 最简单直接的解决方案
 document.addEventListener('DOMContentLoaded', function() {
-    const cdnBase = 'https://cdn.example.com';
+    const cdnBase = 'https://ql-file.netlify.app';
 
     document.querySelectorAll('img').forEach(img => {
         const src = img.src; // 使用img.src属性获取解析后的完整路径
