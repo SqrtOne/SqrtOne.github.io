@@ -37,7 +37,12 @@ $114514$ 公式
 
 > 114514 引用块
 
+<span style="color: red">114514 html</span>
+
 [主页](https://sqrtone.github.io)
 
+> 绝对链接图片测试
 ![](https://ql-file.netlify.app/avatar.jpg)
 
+> 相对链接图片测试
+![](avatar.jpg)
