@@ -23,7 +23,6 @@ title: blog
         {% else %}
         <section class="border">
             <div>{{ post.content }}</div>
-            <hr>
             <p class="note">创建时间: {{ post.date | date: "%Y-%m-%d" }}</p>
             <a href="{{ post.url | relative_url }}">查看原文 →</a>
         </section>
@@ -31,13 +30,6 @@ title: blog
     {% endfor %}
 </div>
 <footer><p>&copy; 2025 - <span id="nowYear"></span> SqrtOne 版权所有</p></footer>
-
-<!-- css -->
-<style>
-    hr {
-        background-color: var(--text-secondary);
-    }
-</style>
 
 <!-- js -->
 <script src="{{ site.url }}{{ site.baseurl }}/script.js" defer></script>
