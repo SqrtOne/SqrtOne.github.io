@@ -13,9 +13,9 @@ layout: default
     {% endif %}
     <section>
         {{ content }}
-        <p class="note">创建于 {{ post.date | date: "%Y-%m-%d" }}
-            {{ if post.upddate }}
-            · 修改于 post.upddate
+        <p class="note">创建于 {{ page.date | date: "%Y-%m-%d" }}
+            {% if page.upddate %}
+            · 修改于 {{ page.upddate }}
             {{ endif }}
         </p>
     </section>

@@ -28,8 +28,8 @@ title: blog
         <section class="border">
             <div>{{ post.content }}</div>
             <p class="note">创建于 {{ post.date | date: "%Y-%m-%d" }}
-                {{ if post.upddate }}
-                · 修改于 post.upddate
+                {% if post.upddate %}
+                · 修改于 {{ post.upddate }}
                 {{ endif }}
             </p>
             <a href="{{ post.url | relative_url }}">查看原文 →</a>
