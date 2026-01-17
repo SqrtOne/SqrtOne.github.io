@@ -4,7 +4,7 @@ description: 晴理·SqrtOneの日记本
 avatar: https://ql-file.netlify.app/avatar.jpg
 background_image: https://ql-file.netlify.app/bg.jpg
 
-url: "https://sqrtone.github.io"
+url: "https://sqrtone.dpdns.org"
 baseurl: ""
 permalink: /blog/:title/
 
@@ -14,4 +14,5 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: 'highlight'
+
   math_engine: mathjax
