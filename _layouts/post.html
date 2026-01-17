@@ -33,10 +33,16 @@ layout: default
 
 <!-- js -->
 <script src="{{ site.url }}{{ site.baseurl }}/script.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
-<script>hljs.highlightAll();</script>
 
+{% if page.languages %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    {% for item in page.my_array %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/{{ item }}.min.js"></script>
+    {% endfor %}
+<script>hljs.highlightAll();</script>
+{% endif %}
+
+{% if page.tex == "used" %}
 <script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
 
 <script>
@@ -55,3 +61,5 @@ layout: default
     };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+{% endif %}

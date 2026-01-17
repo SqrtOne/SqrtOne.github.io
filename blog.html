@@ -6,7 +6,7 @@ title: blog
 
 <div class="card-container">
     {% for post in site.posts %}
-        {% if post.kind == "article" %}
+        {% if post.layout == "blog" %}
         <section>
             <h2>{{ post.title }}</h2>
             <p>
