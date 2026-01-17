@@ -23,49 +23,11 @@
     --header-height: 70px;
 }
 
-[data-theme="dark"] {
-    --primary-color: #6b9dc9;
-    --primary-color-dark: #8ec7fc;
-    --primary-color-light: #1a2a3a;
-    --primary-light: rgba(107, 157, 201, 0.15);
-    --primary-medium: rgba(107, 157, 201, 0.25);
-    --text-primary: #e6e6e6;
-    --text-secondary: #cccccc;
-    --text-tertiary: #b3b3b3;
-    --text-quaternary: #8c8c8c;
-    --bg-light: #1a1a1a;
-    --bg-white: #252525;
-    --border-light: #404040;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-
-.theme-toggle {
-    position: fixed;
-    transition: all 0.3s ease;
-    width: calc(var(--spacing-xl) * 2);
-    height: calc(var(--spacing-xl) * 2);
-    background-color: var(--bg-white);
-    box-shadow: var(--shadow-md);
-    z-index: 999999;
-    border-radius: 50%;
-    border: 2px solid var(--primary-color-dark);
-    bottom: calc(var(--spacing-lg) * 2);
-    right: calc(var(--spacing-lg) * 2);
-    font-size: var(--spacing-md);
-}
-
-/* 图标显示控制 */
-.moon-icon { display: none; }
-[data-theme="light"] .moon-icon { display: none; }
-[data-theme="light"] .sun-icon { display: inline-block; }
-[data-theme="dark"] .sun-icon { display: none; }
-[data-theme="dark"] .moon-icon { display: inline-block; }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -262,5 +224,5 @@ blockquote {
     padding: 0.1rem 1.5rem;
     background: var(--primary-color-light);
     border-radius: 0 6px 6px 0;
-    color: var(--text-primary);
+    color: #333;
 }

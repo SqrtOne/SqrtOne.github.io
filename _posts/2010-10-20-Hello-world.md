@@ -1,11 +1,9 @@
 ---
 layout: post
 title: 测试
+kind: article
 description: 测试文档
 upddate: 2020-02-02
-languages: 
-  - cpp
-tex: used
 ---
 
 # 测试文档
