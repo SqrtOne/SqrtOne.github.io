@@ -44,6 +44,6 @@ const initTheme = () => {
 document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
 
 // 页面加载时初始化
-if (!FORCE_LIGHT_THEME) {
+if (typeof FORCE_LIGHT_THEME === 'undefined' || !FORCE_LIGHT_THEME) {
     window.addEventListener('DOMContentLoaded', initTheme);
 }
