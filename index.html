@@ -1,5 +1,6 @@
 ---
 layout: default
+bg: used
 ---
 
 <div class="profile-container">
@@ -51,38 +52,9 @@ layout: default
         align-items: flex-start;
         padding-top: 8%;
         overflow-x: hidden;
-        position: relative;
     }
 
-    body::before {
-        position: fixed;
-        content: '';
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("{{ site.background_image }}") no-repeat center center fixed;
-        background-size: cover;
-        background-position: center;
-        opacity: 0.9; /* 设置图片不透明度，0-1之间 */
-        z-index: -1;
-    }
 
-    header {
-        background-color: rgba(255, 255, 255, 0.7);
-    }
-
-    header h1 {
-        color: var(--primary-color-dark);
-    }
-
-    nav a {
-        color: var(--primary-color-dark);
-    }
-
-    footer p {
-        color: #ddd;
-    }
 
     /* 主体容器 */
     .profile-container {
