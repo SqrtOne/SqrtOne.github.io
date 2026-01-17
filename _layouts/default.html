@@ -79,9 +79,10 @@
 </div>
 
 </body>
-<script src="{{ site.url }}{{ site.baseurl }}/script.js" defer></script>
 {% if page.bg == "used" %}
 <script>
+    window.FORCE_LIGHT_THEME = true;
+
     function setLightTheme() {
         document.documentElement.setAttribute('data-theme', 'light');
     }
@@ -89,4 +90,5 @@
     setLightTheme();
 </script>
 {% endif %}
+<script src="{{ site.url }}{{ site.baseurl }}/script.js" defer></script>
 </html>
