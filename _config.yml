@@ -6,8 +6,8 @@ url: "https://sqrtone.dpdns.org"
 baseurl: ""
 permalink: /blog/:title/
 
-avatar: {{ site.url }}{{ site.baseurl }}/avatar.jpg
-background_image: {{ site.url }}{{ site.baseurl }}/bg.jpg
+avatar: /avatar.jpg
+background_image: /bg.jpg
 
 markdown: kramdown
 kramdown:
