@@ -189,9 +189,5 @@ nav a {
 }
 
 footer {
-    border-top-color: var(--text-primary);
-}
-
-footer p {
-    color: var(--text-primary);
+    border-top-color: var(--text-tertiary);
 }

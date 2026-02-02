@@ -50,7 +50,13 @@ footer {
     margin-top: auto;
 }
 
-footer p{
+footer p {
     margin: var(--spacing-sm) 0;
     color: var(--text-tertiary);
+}
+
+.only-on-desktop {
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
