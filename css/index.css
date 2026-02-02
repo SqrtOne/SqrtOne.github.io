@@ -188,6 +188,10 @@ nav a {
     color: var(--primary-color-dark);
 }
 
+footer {
+    border-top-color: var(--text-primary);
+}
+
 footer p {
-    color: #ddd;
+    color: var(--text-primary);
 }
