@@ -1,0 +1,11 @@
+- name: 首页
+  url: /
+
+- name: blog
+  url: /blog/
+
+- name: 动态
+  url: /moments/
+
+- name: 留言板
+  url: /msgboard/
