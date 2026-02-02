@@ -1,6 +1,6 @@
 main {
-    width: 100%;
-    min-height: 100vh;
+    width: 100vh;
+    height: auto;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -13,8 +13,8 @@ main::before {
     content: '';
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vh;
+    height: 100vh;
     background: url("/image/bg.jpg") no-repeat center center fixed;
     background-size: cover;
     background-position: center;
@@ -44,7 +44,6 @@ body {
     padding: 20px;
 }
 
-/* 其余样式保持不变... */
 .avatar {
     width: 140px;
     height: 140px;
