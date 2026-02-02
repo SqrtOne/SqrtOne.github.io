@@ -49,3 +49,8 @@ footer {
     background-color: transparent;
     margin-top: auto;
 }
+
+footer p{
+    margin: var(--spacing-sm) 0;
+    color: var(--text-tertiary);
+}
