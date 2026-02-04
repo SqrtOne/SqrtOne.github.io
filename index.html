@@ -1,46 +1,263 @@
 ---
-layout: default
-css:
-  - topbar.css
-  - index.css
 ---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description | default: site.description | strip_html | strip_newlines | truncate: 50, '...' }}">
+    <title>
+        {{ site.name }}
+    </title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="https://www.bilibili.com/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            position: relative;
+        }
 
-{% include topbar.html %}
+        body::before {
+            position: fixed;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("image/bg.jpg") no-repeat center center fixed;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.9; /* 设置图片不透明度，0-1之间 */
+            z-index: -1;
+        }
 
-<main>
-    <div class="profile-container">
-        <div class="tag-wrapper">
-            <span class="tag-item tag-1">OIer</span>
-            <span class="tag-item tag-2">infp</span>
-            <span class="tag-item tag-3">周深</span>
-            <span class="tag-item tag-4">MC</span>
+        header {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        header h1 {
+            color: var(--primary-color-dark);
+        }
+
+        nav a {
+            color: var(--primary-color-dark);
+        }
+
+        footer p {
+            color: #ddd;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 8%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 主体容器 */
+        .profile-container {
+            text-align: center;
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            max-width: 800px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* 头像 */
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+            object-fit: cover;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 3;
+            background-color: #fff;
+        }
+
+        /* TAG */
+        .tag-wrapper {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 320px;
+            height: 320px;
+            z-index: 1;
+        }
+
+        .tag-item {
+            position: absolute;
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--primary-color);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            white-space: nowrap;
+            transition: all 0.25s ease;
+            cursor: default;
+        }
+
+        .tag-item:hover {
+            background:var(--primary-color-dark);
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .tag-1 { top: 40px; right: 10px; }
+        .tag-2 { top: 40px; left: 10px; }
+        .tag-3 { top: 100px; right: 30px; }
+        .tag-4 { top: 100px; left: 30px; }
+
+        /* Name */
+        .username {
+            font-size: 28px;
+            color: var(--primary-color-dark);
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        /* 个签 */
+        .signature {
+            font-size: 16px;
+            color: #000;
+            line-height: 1.6;
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: 20%; }
+            .avatar { width: 120px; height: 120px; }
+            .tag-wrapper { width: 260px; height: 260px; }
+            .tag-item { padding: 5px 12px; font-size: 12px; }
+            .username { font-size: 24px; }
+            .signature { font-size: 14px; }
+        }
+
+        .divider {
+            width: 120px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.7);
+            margin: 20px auto;
+            box-shadow: 0 0 6px rgba(255,255,255,0.6);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            z-index: 999;
+        }
+
+        .social-links a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            pointer-events: auto;
+            z-index: 999;
+        }
+
+        .social-links a img {
+            width: 22px;
+            height: 22px;
+            margin: 9px 0;
+            object-fit: cover;
+        }
+
+        .social-links a svg {
+            width: 22px;
+            height: 22px;
+            margin: 9px 0;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+
+        footer {
+            position: fixed; /* 固定定位 */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>{{ site.name }}</h1>
+    <nav>
+        <ul>
+            {% for item in site.data.topbar %}
+            <li><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <main>
+        <div class="profile-container">
+            <div class="tag-wrapper">
+                <span class="tag-item tag-1">OIer</span>
+                <span class="tag-item tag-2">infp</span>
+                <span class="tag-item tag-3">周深</span>
+                <span class="tag-item tag-4">MC</span>
+            </div>
+            <img src="{{ site.avatar }}" alt="头像" class="avatar">
+            <div class="username">{{ site.author }}</div>
+            <div class="signature">以爱之名 你还愿意吗</div>
+            <div class="divider"></div>
+            <div class="social-links">
+                <a href="https://space.bilibili.com/1537856589" target="_blank">
+                    <img src="https://www.bilibili.com/favicon.ico" alt="BiliBili">
+                </a>
+                <a href="https://github.com/SqrtOne" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#000000">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://bgm.tv/user/sqrtone" target="_blank">
+                    <img src="https://bgm.tv/img/favicon.ico" alt="另一个B站">
+                </a>
+                <a href="https://www.luogu.com.cn/user/1353007" target="_blank">
+                    <img src="https://www.luogu.com.cn/favicon.ico" alt="锣鼓（">
+                </a>
+                <a href="mailto: sqrtone@qq.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#000000">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+            </div>
         </div>
-        <img src="{{ site.avatar }}" alt="头像" class="avatar">
-        <div class="username">晴理 · SqrtOne</div>
-        <div class="signature">以爱之名 你还愿意吗</div>
-        <div class="divider"></div>
-        <div class="social-links">
-            <a href="https://space.bilibili.com/1537856589" target="_blank">
-                <img src="https://www.bilibili.com/favicon.ico" alt="BiliBili">
-            </a>
-            <a href="https://github.com/SqrtOne" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#000000">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-            </a>
-            <a href="https://bgm.tv/user/sqrtone" target="_blank">
-                <img src="https://bgm.tv/img/favicon.ico" alt="另一个B站">
-            </a>
-            <a href="https://www.luogu.com.cn/user/1353007" target="_blank">
-                <img src="https://www.luogu.com.cn/favicon.ico" alt="锣鼓（">
-            </a>
-            <a href="mailto: sqrtone@qq.com">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#000000">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-            </a>
-        </div>
-    </div>
+        {% include footer.html %}
+    </main>
+</div>
+<script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
+</body>
 
-    {% include footer.html %}
-</main>
+</html>
