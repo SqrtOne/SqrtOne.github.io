@@ -1,10 +1,37 @@
 <header>
     <h1>{{ site.name }}</h1>
     <nav>
-        <ul>
+        <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-menu">
             {% for item in site.data.topbar %}
             <li><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.name }}</a></li>
             {% endfor %}
         </ul>
     </nav>
 </header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.nav-menu');
+
+        toggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            menu.classList.toggle('active');
+        });
+
+        // 点击菜单外区域关闭菜单
+        document.addEventListener('click', function(e) {
+            if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                toggle.setAttribute('aria-expanded', 'false');
+                menu.classList.remove('active');
+            }
+        });
+    });
+</script>
