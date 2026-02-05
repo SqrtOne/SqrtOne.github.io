@@ -1,17 +1,22 @@
 ---
 layout: default
+css:
+  - blog.css
 ---
 
 {% if page.kind == "blog" %}
 <h1>{{ page.title }}</h1>
-<p>创建于 {{ post.date | date: "%Y-%m-%d" }}
-    {% if post.upddate %}
-    · 修改于 {{ post.upddate }}
+<p>创建于 {{ page.date | date: "%Y-%m-%d" }}
+    {% if page.upddate %}
+    · 修改于 {{ page.upddate }}
     {% endif %}
     · by {{ site.author }}
 </p>
 {% endif %}
 
+<section>
 {{ content }}
+</section>
+
 {% include giscus.html %}
 {% include footer.html %}
