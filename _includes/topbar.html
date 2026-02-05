@@ -1,6 +1,10 @@
-<h3>
-    {% for item in site.data.topbar %}
-    <a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.name }}</a>
-        {% unless forloop.first %} | {% endunless %}
-    {% endfor %}
-</h3>
+<header>
+    <h1>{{ site.name }}</h1>
+    <nav>
+        <ul>
+            {% for item in site.data.topbar %}
+            <li><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>

@@ -1,0 +1,125 @@
+:root {
+    --primary-color: #8ec7fc;
+    --primary-color-dark: #409eff;
+    --primary-color-light: #f0f8fb;
+    --primary-light: rgba(142, 199, 252, 0.1);
+    --primary-medium: rgba(142, 199, 252, 0.2);
+    --text-primary: #333;
+    --text-secondary: #555;
+    --text-tertiary: #666;
+    --text-quaternary: #999;
+    --bg-light: #f9f9f9;
+    --bg-white: #fff;
+    --border-light: #eee;
+
+    --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
+    --shadow-md: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.12);
+
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --header-height: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: var(--header-height);
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    font-size: 1.2rem;
+    font-weight: 450;
+    display: block;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: background-color 0.3s;
+    padding: 0.8rem 1rem;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+}
+
+main {
+    flex: 1;
+    margin: var(--spacing-md) var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-top: var(--spacing-md);
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    main {
+        margin-left: 0;
+    }
+}
+
+p {
+    margin: var(--spacing-sm) 0;
+    color: var(--text-tertiary);
+}
+
+footer {
+    text-align: center;
+    padding: 1.2rem;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+    background-color: transparent;
+    margin-top: auto;
+}
+
+header {
+    position: fixed; /* 固定在顶部 */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height); /* 顶栏高度 */
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+    padding: 0 var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99; /* 确保顶栏在侧边栏之上 */
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: var(--primary-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}

@@ -1,0 +1,31 @@
+---
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description | default: site.description | strip_html | strip_newlines | truncate: 50, '...' }}">
+    <title>
+        {% if page.title %}
+        {{ page.title }} - {{ site.name }}
+        {% else %}
+        {{ site.name }}
+        {% endif %}
+    </title>
+    <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/styles.css">
+    {% if page.css %}
+    {% for url in page.css %}
+    {% if url contains "http" %}
+    <link rel="stylesheet" href="{{ url }}">
+    {% else %}
+    <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/{{ url }}">
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    <link rel="icon" href="https://www.bilibili.com/favicon.ico" type="image/x-icon">
+</head>
+<body>
+{{ content }}
+</body>
+</html>
