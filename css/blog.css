@@ -1,0 +1,44 @@
+.info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.info img {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .info {
+        gap: 12px;
+    }
+
+    .info img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+section {
+    background-color: var(--bg-white);
+    border-radius: 6px;
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+}
+
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+section a.hidden {
+    text-decoration: none;
+}

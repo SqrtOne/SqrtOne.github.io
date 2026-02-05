@@ -32,3 +32,7 @@ main h1, main h2, main h3 {
 main h1, main h2 {
     border-bottom: 1px solid var(--border-light);
 }
+
+hr {
+    border-bottom: 1px solid var(--border-light);
+}

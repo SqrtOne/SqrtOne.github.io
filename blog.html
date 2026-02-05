@@ -1,0 +1,34 @@
+---
+layout: default
+css:
+  - blog.css
+---
+
+{% for post in site.posts %}
+    {% if post.kind == "blog" %}
+<section>
+    <a href="{{ post.url | relative_url }}" class="hidden">
+    <h2>{{ page.title }}</h2>
+    <div class="info">
+        <img src="image/avatar-sm.png" alt="">
+        <div class="other">
+            <p>{{ site.author }}</p>
+            <p>创建于 {{ post.date | date: "%Y-%m-%d" }}
+                {% if post.upddate %}
+                · 修改于 {{ post.upddate }}
+                {% endif %}</p>
+        </div>
+    </div>
+    <p>
+        {% if post.description %}
+        简介：{{ post.description }}
+        {% else %}
+        {{ post.excerpt | strip_html | strip_newlines | truncate: 100, '...' }}
+        {% endif %}
+    </p>
+    </a>
+</section>
+    {% endif %}
+{% endfor %}
+
+{% include footer.html %}
