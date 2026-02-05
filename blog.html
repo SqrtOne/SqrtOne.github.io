@@ -8,14 +8,14 @@ css:
     {% if post.kind == "blog" %}
 <section>
     <a href="{{ post.url | relative_url }}" class="hidden">
-    <h2>{{ page.title }}</h2>
+    <h2>{{ post.title }}</h2>
     <div class="info">
-        <img src="image/avatar-sm.png" alt="">
+        <img src="{{ site.url }}{{ site.baseurl }}/image/avatar-sm.png" alt="">
         <div class="other">
             <p>{{ site.author }}</p>
             <p>创建于 {{ post.date | date: "%Y-%m-%d" }}
                 {% if post.upddate %}
-                · 修改于 {{ post.upddate }}
+                · 修改于 {{ post.upddate | date: "%Y-%m-%d" }}
                 {% endif %}</p>
         </div>
     </div>
@@ -23,7 +23,7 @@ css:
         {% if post.description %}
         简介：{{ post.description }}
         {% else %}
-        {{ post.excerpt | strip_html | strip_newlines | truncate: 100, '...' }}
+        摘要：{{ post.excerpt | strip_html | strip_newlines | truncate: 100, '...' }}
         {% endif %}
     </p>
     </a>
