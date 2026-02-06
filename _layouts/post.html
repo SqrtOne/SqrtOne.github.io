@@ -4,15 +4,23 @@ css:
   - blog.css
 ---
 
-{% if page.kind == "blog" %}
-<h1>{{ page.title }}</h1>
-<p>创建于 {{ page.date | date: "%Y-%m-%d" }}
-    {% if page.upddate %}
-    · 修改于 {{ page.upddate }}
+<link href="{{ site.url }}{{ site.baseurl }}/css/blog.css" rel="stylesheet">
+
+<section>
+    {% if page.title %}
+    <h2>{{ page.title }}</h2>
     {% endif %}
-    · by {{ site.author }}
-</p>
-{% endif %}
+    <div class="info">
+        <img src="{{ site.avatar-sm }}" alt="">
+        <div class="other">
+            <p>{{ site.author }}</p>
+            <p>创建于 {{ post.date | date: "%Y-%m-%d" }}
+                {% if post.upddate %}
+                · 修改于 {{ post.upddate }}
+                {% endif %}</p>
+        </div>
+    </div>
+</section>
 
 <section>
 {{ content }}

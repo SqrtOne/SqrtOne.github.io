@@ -7,9 +7,8 @@ css:
 {% for post in site.posts %}
 {% unless post.kind == "blog" %}
 <section>
-    <h2>{{ post.title }}</h2>
     <div class="info">
-        <img src="{{ site.url }}{{ site.baseurl }}/image/avatar-sm.png" alt="">
+        <img src="{{ site.avatar-sm }}" alt="">
         <div class="other">
             <p>{{ site.author }}</p>
             <p>{{ post.date | date: "%Y-%m-%d" }}</p>

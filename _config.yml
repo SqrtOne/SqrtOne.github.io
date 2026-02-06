@@ -6,3 +6,4 @@ url: "https://qli.qzz.io"
 baseurl: ""
 permalink: /post/:title/
 avatar: "https://qli.qzz.io/image/avatar.jpg"
+avatar-sm: "https://qli.qzz.io/image/avatar-sm.png"
