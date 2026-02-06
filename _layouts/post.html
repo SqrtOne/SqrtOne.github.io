@@ -6,21 +6,21 @@ css:
 
 <link href="{{ site.url }}{{ site.baseurl }}/css/blog.css" rel="stylesheet">
 
+{% if page.kind == "blog" %}
 <section>
-    {% if page.title %}
     <h2>{{ page.title }}</h2>
-    {% endif %}
     <div class="info">
         <img src="{{ site.avatar-sm }}" alt="">
         <div class="other">
             <p>{{ site.author }}</p>
-            <p>创建于 {{ post.date | date: "%Y-%m-%d" }}
-                {% if post.upddate %}
+            <p>创建于 {{ page.date | date: "%Y-%m-%d" }}
+                {% if page.upddate %}
                 · 修改于 {{ post.upddate }}
                 {% endif %}</p>
         </div>
     </div>
 </section>
+{% endif %}
 
 <section>
 {{ content }}
