@@ -36,3 +36,25 @@ main h1, main h2 {
 hr {
     border-bottom: 1px solid var(--border-light);
 }
+
+main img {
+    max-width: 100%;
+    height: auto;
+}
+
+main blockquote {
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: linear-gradient(to right, #f8f9fa 0%, #ffffff 100%);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 8px 8px 0;
+}
+
+main ul, main ol {
+    padding: 0 var(--spacing-md);
+}
+
+main hr {
+    margin: var(--spacing-md) 0;
+    color: var(--text-primary);
+}
